@@ -2,9 +2,14 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Home",
+    page_icon="🌿",
 )
 
-st.title("HOME")
+st.write("# HOME")
+
+with st.container():
+    st.write("This is inside the container")
+
 
 # code to fetch recently spotted here.
 import sqlite3

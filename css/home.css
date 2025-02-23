@@ -2,7 +2,15 @@
     /* background-color: #E8F4E2; */
 }
 
-h1, h2, h3, h4, h5, h6{
-    /* color: #5EA196; */
+*  {
+    color: #5EA196;
 }
 
+h1{
+    text-align: center;
+}
+
+st.container {
+    background-color: #5EA196;
+    border-radius: 20%;
+}

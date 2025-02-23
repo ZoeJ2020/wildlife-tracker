@@ -34,14 +34,14 @@ try:
 
         data = data.T.reset_index()
         data = pd.melt(data, id_vars=["index"]).rename(
-            columns={"index": "year", "variable" : "Animal", "value": "Population of specific animal in area"}
+            columns={"index": "year", "variable" : "Animal", "value": "Sightings of specific animal in area"}
         )
         chart = (
             alt.Chart(data)
             .mark_area(opacity=0.3)
             .encode(
                 x="year:T",
-                y=alt.Y("Population of specific animal in area:Q", stack=None),
+                y=alt.Y("Sightings of specific animal in area:Q", stack=None),
                 color="Animal:N",
             )
         )
@@ -54,3 +54,6 @@ except URLError as e:
     """
         % e.reason
     )
+
+
+st.markdown('<style>' + open('css/dataframe.css').read() + '</style>', unsafe_allow_html=True)
