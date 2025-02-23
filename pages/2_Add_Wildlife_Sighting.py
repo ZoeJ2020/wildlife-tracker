@@ -2,7 +2,7 @@ import streamlit as st
 from st_files_connection import FilesConnection
 import os
 
-os.chdir('/workspaces/wildlife-tracker')
+os.chdir('/workspaces/wildlife-tracker/pages')
 
 from ai_detection import detect_objects
 
