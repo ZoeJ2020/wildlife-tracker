@@ -26,4 +26,4 @@ st.markdown(
 """
 )
 
-st.markdown('<style>' + open('styling.css').read() + '</style>', unsafe_allow_html=True)
+st.markdown('<style>' + open('home.css').read() + '</style>', unsafe_allow_html=True)
