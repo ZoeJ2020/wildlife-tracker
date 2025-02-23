@@ -5,7 +5,7 @@ import os
 
 print(os.getcwd())
 
-os.chdir('/workspaces/wildlife-tracker')
+# os.chdir('/workspaces/wildlife-tracker')
 
 from ai_detection import detect_objects
 
