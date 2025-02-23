@@ -72,7 +72,7 @@ else:
     rows = c.fetchall()
 
     for row in rows:
-        st.image(row[1])
+        st.image(row[1], width=50)
         st.subheader(row[4] + " - " + row[2])
         #st.subheader(row[2])
 
