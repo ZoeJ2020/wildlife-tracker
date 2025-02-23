@@ -1,6 +1,8 @@
 import streamlit as st
 from st_files_connection import FilesConnection
 
+os.chdir('/workspaces/wildlife-tracker')
+
 from ai_detection import detect_objects
 
 st.set_page_config(page_title="Add Wildlife Sighting")
