@@ -78,3 +78,4 @@ else:
         st.title(row[2])
 
 conn.close()
+st.markdown('<style>' + open('css/explore_wildlife.css').read() + '</style>', unsafe_allow_html=True)
