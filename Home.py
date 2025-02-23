@@ -8,7 +8,7 @@ st.set_page_config(
 st.write("# HOME")
 
 with st.container():
-    st.write("This is inside the container")
+    st.write("")
 
 
 # code to fetch recently spotted here.
