@@ -2,7 +2,7 @@
 import os
 
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "crystal@wildlife-451802.iam.gserviceaccount.com"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = ""
 
 client = storage.Client()
 
