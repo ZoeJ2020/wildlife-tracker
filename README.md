@@ -17,3 +17,7 @@ A simple Streamlit app template for you to modify!
    ```
    $ streamlit run streamlit_app.py
    ```
+
+
+CANVA LINK
+https://www.canva.com/design/DAGf3OeArUQ/DNVFKVOgxVFz7qL_laKvlw/edit?utm_content=DAGf3OeArUQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
