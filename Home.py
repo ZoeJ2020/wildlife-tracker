@@ -1,4 +1,5 @@
 import streamlit as st
+from ai_detection import detect_objects
 
 st.set_page_config(
     page_title="Home",
@@ -52,5 +53,3 @@ for row in rows:
 
 # Close the connection
 conn.close()
-
-st.markdown('<style>' + open('css/home.css').read() + '</style>', unsafe_allow_html=True)

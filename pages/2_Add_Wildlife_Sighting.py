@@ -1,6 +1,8 @@
 import streamlit as st
 from st_files_connection import FilesConnection
 
+from ai_detection import detect_objects
+
 st.set_page_config(page_title="Add Wildlife Sighting")
 
 st.markdown("# Add Wildlife Sighting")
@@ -11,6 +13,8 @@ import os
 
 conn = sqlite3.connect('user_data.db')
 c = conn.cursor()
+
+# c.execute("DROP TABLE user_data")
 
 c.execute('''
     CREATE TABLE IF NOT EXISTS user_data (
@@ -36,37 +40,30 @@ import streamlit as st
 on = st.toggle("Activate AI-powered Animal Detection")
 
 if on:
-        with st.form("data_form"):
-            uploaded_image = st.file_uploader("Upload an Image", type=["jpg", "png", "jpeg"])
+    with st.form("data_form"):
+        uploaded_image = st.file_uploader("Upload an Image", type=["jpg", "png", "jpeg"])
+        date = st.date_input("Date Photographed")
+        # type = st.text_input("Type")
+        # breed = st.text_input("Breed")
+        condition = st.selectbox(
+        "Health condition",
+        ("Healthy", "Injured", "Unknown")
+        )
+        location = st.text_input("Location found")
+        age = st.number_input("Optional: Age (in years)")
+        height = st.number_input("Optional: Height (in metres)")
+        weight = st.number_input("Optional: Weight (in kg)")
 
-            # when image is uploaded
-
-            # RUN AI CODE TO FILL IN FIELDS BELOW WITH INFO
-
-            # STORE THEM AS VARIABLES
-
-            # THEN INSERT THEM INTO THE FIELDS AND DISPLAY THEM
-
-
-            # date = st.date_input("Date Photographed")
-            # type = st.text_input("Type")
-            # breed = st.text_input("Breed")
-            # condition = st.selectbox(
-            # "Health condition",
-            # ("Healthy", "Injured", "Unknown")
-            # )
-            # location = st.text_input("Location found")
-            # age = st.number_input("Optional: Age (in years)")
-            # height = st.number_input("Optional: Height (in metres)")
-            # weight = st.number_input("Optional: Weight (in kg)")
-
-            submit_button = st.form_submit_button("Submit")
+        submit_button = st.form_submit_button("Submit")
 
         if submit_button:
             if uploaded_image is not None:
                 image_path = os.path.join(UPLOAD_FOLDER, uploaded_image.name)
+
                 with open(image_path, "wb") as f:
                     f.write(uploaded_image.getbuffer())
+                
+                type, breed = detect_objects('./uploaded_images/' + uploaded_image.name)
 
                 c.execute('''
                     INSERT INTO user_data (image_path, date, type, breed, condition, location, age, height, weight) 
@@ -77,6 +74,7 @@ if on:
                 st.success(f"Sighting submitted successfully!")
             else:
                 st.warning("Please upload an image.")
+
 
 
 else:
