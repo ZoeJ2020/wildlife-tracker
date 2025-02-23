@@ -9,9 +9,6 @@ st.set_page_config(
 
 st.write("# HOME")
 
-with st.container():
-    st.write("")
-
 
 # code to fetch recently spotted here.
 import sqlite3
