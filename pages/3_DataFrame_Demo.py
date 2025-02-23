@@ -35,7 +35,7 @@ try:
     else:
         data = df.loc[animals]
         # data /= 1000000.0
-        st.write("Population of anials in area", data.sort_index())
+        st.write("Population of animals in area", data.sort_index())
 
         data = data.T.reset_index()
         data = pd.melt(data, id_vars=["index"]).rename(
