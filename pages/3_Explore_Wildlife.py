@@ -1,7 +1,7 @@
 import streamlit as st
 from st_files_connection import FilesConnection
 
-os.chdir('/workspaces/wildlife-tracker')
+os.chdir('/workspaces/wildlife-tracker/pages')
 
 st.set_page_config(page_title="Explore Wildlife")
 
