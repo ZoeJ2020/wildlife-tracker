@@ -3,23 +3,19 @@ import pandas as pd
 import altair as alt
 from urllib.error import URLError
 
-st.set_page_config(page_title="DataFrame Demo", page_icon="📊")
+st.set_page_config(page_title="View & Compare Trends")
 
-st.markdown("# DataFrame Demo")
-st.sidebar.header("DataFrame Demo")
-st.write(
-    """This demo shows how to use `st.write` to visualize Pandas DataFrames.
-(Data courtesy of the [UN Data Explorer](http://data.un.org/Explorer.aspx).)"""
-)
+st.markdown("# View & Compare Trends")
+st.sidebar.header("View & Compare Trends")
 
 
 @st.cache_data
 def get_animal_data():
     data = {
-        "Animal" : ["Dog", "Cat"],
-        2018 : [100, 80],
-        2019 : [70, 50],
-        2020 : [90, 100]
+        "Animal" : ["Bird", "Squirrel", "Cat", "Fox", "Wolf"],
+        2018 : [100, 80, 20, 50, 25],
+        2019 : [70, 50, 18, 80, 35],
+        2020 : [90, 100, 15, 60, 32]
     }
 
     return pd.DataFrame(data).set_index("Animal")
@@ -28,14 +24,13 @@ def get_animal_data():
 try:
     df = get_animal_data()
     animals = st.multiselect(
-        "Choose animals", list(df.index), ["Dog", "Cat"]
+        "Choose animals", list(df.index), ["Bird", "Fox"]
     )
     if not animals:
         st.error("Please select at least one animal.")
     else:
         data = df.loc[animals]
-        # data /= 1000000.0
-        st.write("Population of anials in area", data.sort_index())
+        st.write("Population of animals in area", data.sort_index())
 
         data = data.T.reset_index()
         data = pd.melt(data, id_vars=["index"]).rename(
