@@ -16,8 +16,6 @@ import os
 
 print(os.getcwd())
 
-FilesConnection.
-
 # os.chdir('/workspaces/wildlife-tracker')
 
 from ai_detection import detect_objects
