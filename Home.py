@@ -1,11 +1,19 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Hello",
-    page_icon="👋",
+    page_title="Home",
+    page_icon="🌿",
 )
 
-st.write("# Welcome to Streamlit! 👋")
+st.write("# HOME")
+
+with st.container():
+    st.write("This is inside the container")
+
+    
+
+
+
 
 st.markdown(
     """
@@ -26,4 +34,4 @@ st.markdown(
 """
 )
 
-st.markdown('<style>' + open('styling.css').read() + '</style>', unsafe_allow_html=True)
+st.markdown('<style>' + open('css/home.css').read() + '</style>', unsafe_allow_html=True)
