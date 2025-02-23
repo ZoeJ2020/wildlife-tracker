@@ -9,9 +9,9 @@
 h1 {
     text-align: center;
 }
-button {
+button, p {
     background:#5EA196 !important;
 }
 st-emotion-cache-ocsh0s e1d5ycv58{
-    background: #5EA196;
+    background: #5EA196 !important;
 }
