@@ -63,7 +63,9 @@ if on:
                 with open(image_path, "wb") as f:
                     f.write(uploaded_image.getbuffer())
                 
-                type, breed = detect_objects('./uploaded_images/' + uploaded_image.name)
+                # type, breed = detect_objects('./uploaded_images/' + uploaded_image.name)
+
+                type, breed = detect_objects('../uploaded_images/' + uploaded_image.name)
 
                 c.execute('''
                     INSERT INTO user_data (image_path, date, type, breed, condition, location, age, height, weight) 
