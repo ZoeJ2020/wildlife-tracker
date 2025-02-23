@@ -1,5 +1,7 @@
 import streamlit as st
 
+print(os.getcwd())
+
 
 abspath = os.path.abspath(__file__)
 
@@ -14,7 +16,7 @@ from st_files_connection import FilesConnection
 import os
 # import ai_detection
 
-print(os.getcwd())
+
 
 # os.chdir('/workspaces/wildlife-tracker')
 
