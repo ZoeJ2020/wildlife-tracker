@@ -3,7 +3,7 @@ import os
 # import ai_detection
 
 # os.chdir(dname)
-print(os.getcwd())
+currentPath = os.getcwd()
 
 
 
@@ -13,7 +13,8 @@ print(os.getcwd())
 from st_files_connection import FilesConnection
 
 
-os.chdir('/workspaces/wildlife-tracker/pages')
+# os.chdir('/workspaces/wildlife-tracker/pages')
+os.chdir('/workspaces/')
 
 from ai_detection import detect_objects
 
