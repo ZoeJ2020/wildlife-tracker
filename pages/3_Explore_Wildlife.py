@@ -78,4 +78,5 @@ else:
         st.title(row[2])
 
 conn.close()
-st.markdown('<style>' + open('styling.css').read() + '</style>', unsafe_allow_html=True)
+
+#st.markdown('<style>' + open('styling.css').read() + '</style>', unsafe_allow_html=True)
