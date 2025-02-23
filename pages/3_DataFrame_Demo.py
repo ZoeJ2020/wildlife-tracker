@@ -14,27 +14,32 @@ st.write(
 
 
 @st.cache_data
-def get_UN_data():
-    AWS_BUCKET_URL = "http://streamlit-demo-data.s3-us-west-2.amazonaws.com"
-    df = pd.read_csv(AWS_BUCKET_URL + "/agri.csv.gz")
-    return df.set_index("Region")
+def get_animal_data():
+    data = {
+        "Animal" : ["Dog", "Cat"],
+        2018 : [100, 80],
+        2019 : [70, 50],
+        2020 : [90, 100]
+    }
+
+    return pd.DataFrame(data).set_index("Animal")
 
 
 try:
-    df = get_UN_data()
-    countries = st.multiselect(
-        "Choose countries", list(df.index), ["China", "United States of America"]
+    df = get_animal_data()
+    animals = st.multiselect(
+        "Choose animals", list(df.index), ["Dog", "Cat"]
     )
-    if not countries:
-        st.error("Please select at least one country.")
+    if not animals:
+        st.error("Please select at least one animal.")
     else:
-        data = df.loc[countries]
-        data /= 1000000.0
+        data = df.loc[animals]
+        # data /= 1000000.0
         st.write("### Gross Agricultural Production ($B)", data.sort_index())
 
         data = data.T.reset_index()
         data = pd.melt(data, id_vars=["index"]).rename(
-            columns={"index": "year", "value": "Gross Agricultural Product ($B)"}
+            columns={"index": "year", "variable" : "Animal", "value": "Gross Agricultural Product ($B)"}
         )
         chart = (
             alt.Chart(data)
@@ -42,7 +47,7 @@ try:
             .encode(
                 x="year:T",
                 y=alt.Y("Gross Agricultural Product ($B):Q", stack=None),
-                color="Region:N",
+                color="Animal:N",
             )
         )
         st.altair_chart(chart, use_container_width=True)
