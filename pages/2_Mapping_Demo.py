@@ -31,7 +31,7 @@ try:
             get_position=["lon", "lat"],
             radius=150,
             elevation_scale=1,
-            elevation_range=[0, 600],
+            elevation_range=[0, 800],
             extruded=True,
         ),
 
