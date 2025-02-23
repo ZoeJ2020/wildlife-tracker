@@ -14,7 +14,7 @@ from st_files_connection import FilesConnection
 
 
 # os.chdir('/workspaces/wildlife-tracker/pages')
-os.chdir('/workspaces/')
+os.chdir('/workspaces')
 
 from ai_detection import detect_objects
 
