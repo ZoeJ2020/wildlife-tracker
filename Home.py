@@ -25,3 +25,5 @@ st.markdown(
     - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
 """
 )
+
+st.markdown('<style>' + open('styling.css').read() + '</style>', unsafe_allow_html=True)
