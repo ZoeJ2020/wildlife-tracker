@@ -93,3 +93,4 @@ for row in rows:
 
 # Close the connection
 conn.close()
+st.markdown('<style>' + open('css/database.css').read() + '</style>', unsafe_allow_html=True)
