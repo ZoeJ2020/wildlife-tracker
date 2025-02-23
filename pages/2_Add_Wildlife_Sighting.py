@@ -1,8 +1,9 @@
 import streamlit as st
 from st_files_connection import FilesConnection
 import os
+# import ai_detection
 
-os.chdir('/workspaces/wildlife-tracker/pages')
+os.chdir('/workspaces/wildlife-tracker')
 
 from ai_detection import detect_objects
 
@@ -12,7 +13,6 @@ st.markdown("# Add Wildlife Sighting")
 st.sidebar.header("Add Wildlife Sighting")
 
 import sqlite3
-import os
 
 conn = sqlite3.connect('user_data.db')
 c = conn.cursor()
