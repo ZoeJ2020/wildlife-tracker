@@ -1,5 +1,8 @@
 import streamlit as st
+import os
+# import ai_detection
 
+os.chdir(dname)
 print(os.getcwd())
 
 
@@ -9,13 +12,10 @@ dname = os.path.dirname(abspath)
 
 print(dname)
 
-os.chdir(dname)
+
 
 
 from st_files_connection import FilesConnection
-import os
-# import ai_detection
-
 
 
 # os.chdir('/workspaces/wildlife-tracker')
