@@ -2,6 +2,8 @@ import os
 from google.cloud import vision
 import streamlit as st
 
+os.chdir('/workspaces/wildlife-tracker')
+
 # Set up authentication using the service account key
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "functions/wildlife-tracker-451720-4b5b0a585351.json"
 

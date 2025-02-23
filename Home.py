@@ -1,5 +1,4 @@
 import streamlit as st
-from ai_detection import detect_objects
 
 image_width = 200
 
