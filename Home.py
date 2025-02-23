@@ -29,8 +29,7 @@ rows = c.fetchall()
 
 for row in rows:
     st.image(row[1], width=image_width)
-    st.title(row[4])
-    st.title(row[2])
+    st.caption(row[4] + " - " + row[2])
 
 # Close the connection
 conn.close()
@@ -48,9 +47,7 @@ rows = c.fetchall()
 
 for row in rows:
     st.image(row[1], width=image_width)
-    st.title(row[4])
-    st.title(row[6])
-    st.title(row[2])
+    st.caption(row[4] + " in " + row[6] + " at " + row[2])
 
 # Close the connection
 conn.close()
