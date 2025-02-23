@@ -65,3 +65,5 @@ except URLError as e:
     """
         % e.reason
     )
+
+st.markdown('<style>' + open('css/map.css').read() + '</style>', unsafe_allow_html=True)
