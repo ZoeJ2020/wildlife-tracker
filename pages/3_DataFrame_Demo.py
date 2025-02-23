@@ -35,18 +35,18 @@ try:
     else:
         data = df.loc[animals]
         # data /= 1000000.0
-        st.write("### Gross Agricultural Production ($B)", data.sort_index())
+        st.write("Population of anials in area", data.sort_index())
 
         data = data.T.reset_index()
         data = pd.melt(data, id_vars=["index"]).rename(
-            columns={"index": "year", "variable" : "Animal", "value": "Gross Agricultural Product ($B)"}
+            columns={"index": "year", "variable" : "Animal", "value": "Population of specific animal in area"}
         )
         chart = (
             alt.Chart(data)
             .mark_area(opacity=0.3)
             .encode(
                 x="year:T",
-                y=alt.Y("Gross Agricultural Product ($B):Q", stack=None),
+                y=alt.Y("Population of specific animal in area:Q", stack=None),
                 color="Animal:N",
             )
         )
