@@ -67,7 +67,7 @@ if submit_button:
         st.write("Please enter a type or breed to search.")
 
 else:
-    st.subheader("All Wildlife")
+    st.header("All Wildlife")
 
     c.execute("SELECT * FROM user_data;")
     rows = c.fetchall()
