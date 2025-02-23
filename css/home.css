@@ -10,7 +10,7 @@ h1 {
     text-align: center;
 }
 
-st.container {
+#stMarkdownContainer {
     background-color: #5EA196;
     border-radius: 20%;
 }
