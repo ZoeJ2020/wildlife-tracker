@@ -74,8 +74,8 @@ else:
 
     for row in rows:
         st.image(row[1])
-        st.title(row[4])
-        st.title(row[2])
+        st.header(row[4])
+        st.subheader(row[2])
 
 conn.close()
 
