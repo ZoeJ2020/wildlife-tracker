@@ -59,8 +59,7 @@ if submit_button:
         if rows:
             for row in rows:
                 st.image(row[1])
-                st.header(row[4])
-                st.subheader(row[2])
+                st.subheader(row[4] + " " + row[2])
         else:
             st.write("No results found.")
     else:
@@ -74,8 +73,8 @@ else:
 
     for row in rows:
         st.image(row[1])
-        st.header(row[4])
-        st.subheader(row[2])
+        st.subheader(row[4] + " " + row[2])
+        #st.subheader(row[2])
 
 conn.close()
 
