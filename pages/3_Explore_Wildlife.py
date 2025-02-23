@@ -72,8 +72,9 @@ else:
     rows = c.fetchall()
 
     for row in rows:
+        st.title(row[4])
         st.image(row[1])
-        st.caption(row[4] + " - " + row[2])
+        st.caption(row[3] + " - " + row[2])
         #st.subheader(row[2])
 
 conn.close()

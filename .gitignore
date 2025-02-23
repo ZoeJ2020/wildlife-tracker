@@ -1,6 +1,6 @@
 .streamlit/secrets.toml
 
-.functions/wildlife-tracker-451720-4b5b0a585351.json
+/functions/wildlife-tracker-451720-4b5b0a585351.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
