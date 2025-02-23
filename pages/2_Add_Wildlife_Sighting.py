@@ -112,3 +112,5 @@ else:
 
 
 conn.close()
+
+#st.markdown('<style>' + open('styling.css').read() + '</style>', unsafe_allow_html=True)
