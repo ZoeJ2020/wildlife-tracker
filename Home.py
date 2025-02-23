@@ -1,6 +1,8 @@
 import streamlit as st
 from ai_detection import detect_objects
 
+image_width = 200
+
 st.set_page_config(
     page_title="Home",
     page_icon="🌿",
@@ -27,7 +29,7 @@ c.execute("SELECT * FROM user_data WHERE location = 'Aberdeen' ORDER BY date DES
 rows = c.fetchall()
 
 for row in rows:
-    st.image(row[1])
+    st.image(row[1], width=image_width)
     st.title(row[4])
     st.title(row[2])
 
@@ -46,7 +48,7 @@ c.execute("SELECT * FROM user_data ORDER BY date DESC LIMIT 1;")
 rows = c.fetchall()
 
 for row in rows:
-    st.image(row[1])
+    st.image(row[1], width=image_width)
     st.title(row[4])
     st.title(row[6])
     st.title(row[2])
