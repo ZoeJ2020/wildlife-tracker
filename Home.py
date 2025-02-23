@@ -1,5 +1,4 @@
 import streamlit as st
-from ai_detection import detect_objects
 
 image_width = 200
 
@@ -9,9 +8,6 @@ st.set_page_config(
 )
 
 st.write("# HOME")
-
-with st.container():
-    st.write("")
 
 
 # code to fetch recently spotted here.
