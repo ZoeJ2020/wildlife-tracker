@@ -9,6 +9,8 @@ st.sidebar.header("Explore Wildlife")
 import sqlite3
 import os
 
+image_width = 200
+
 conn = sqlite3.connect('user_data.db')
 c = conn.cursor()
 
@@ -58,7 +60,7 @@ if submit_button:
 
         if rows:
             for row in rows:
-                st.image(row[1], width=50)
+                st.image(row[1], width=image_width)
                 #st.subheader(row[4] + " - " + row[2])
         else:
             st.write("No results found.")
