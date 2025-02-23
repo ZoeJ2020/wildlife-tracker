@@ -59,8 +59,8 @@ if submit_button:
         if rows:
             for row in rows:
                 st.image(row[1])
-                st.title(row[4])
-                st.title(row[2])
+                st.caption(row[4])
+                st.caption(row[2])
         else:
             st.write("No results found.")
     else:
