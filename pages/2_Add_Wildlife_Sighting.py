@@ -3,6 +3,8 @@ from st_files_connection import FilesConnection
 import os
 # import ai_detection
 
+print(os.getcwd())
+
 os.chdir('/workspaces/wildlife-tracker')
 
 from ai_detection import detect_objects
