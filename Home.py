@@ -5,7 +5,15 @@ st.set_page_config(
     page_icon="🌿",
 )
 
-st.write("# Home")
+st.write("# HOME")
+
+with st.container():
+    st.write("This is inside the container")
+
+    
+
+
+
 
 st.markdown(
     """
