@@ -62,7 +62,7 @@ if submit_button:
             for row in rows:
                 print(row)
                 st.image(row[1], width=image_width)
-                st.caption(row[4] + " - " + row[2] + " - " + row[5])
+                st.caption(row[4] + " - " + row[6] + " - " + row[2] + " - " + row[5])
         else:
             st.write("No results found.")
     else:
@@ -78,7 +78,7 @@ else:
         print(row)
         st.subheader(row[4])
         st.image(row[1], width=image_width)
-        st.caption(row[3] + " - " + row[2] + " - " + row[5])
+        st.caption(row[3] + " - " + row[6] + " - " + row[2] + " - " + row[5])
         #st.subheader(row[2])
 
 conn.close()
