@@ -59,23 +59,22 @@ if submit_button:
         if rows:
             for row in rows:
                 st.image(row[1])
-                st.title(row[4])
-                st.title(row[2])
+                st.caption(row[4] + " - " + row[2])
         else:
             st.write("No results found.")
     else:
         st.write("Please enter a type or breed to search.")
 
 else:
-    st.subheader("All Wildlife")
+    st.header("All Wildlife")
 
     c.execute("SELECT * FROM user_data;")
     rows = c.fetchall()
 
     for row in rows:
         st.image(row[1])
-        st.header(row[4])
-        st.subheader(row[2])
+        st.caption(row[4] + " - " + row[2])
+        #st.subheader(row[2])
 
 conn.close()
 
