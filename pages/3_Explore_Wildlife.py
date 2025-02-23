@@ -60,8 +60,9 @@ if submit_button:
 
         if rows:
             for row in rows:
+                print(row)
                 st.image(row[1], width=image_width)
-                st.caption(row[4] + " - " + row[2])
+                st.caption(row[4] + " - " + row[2] + " - " + row[5] + " - " + row[7])
         else:
             st.write("No results found.")
     else:
@@ -74,9 +75,10 @@ else:
     rows = c.fetchall()
 
     for row in rows:
-        st.title(row[4])
-        st.image(row[1])
-        st.caption(row[3] + " - " + row[2])
+        print(row)
+        st.subheader(row[4])
+        st.image(row[1], width=image_width)
+        st.caption(row[3] + " - " + row[2] + " - " + row[5] + " - " + row[7])
         #st.subheader(row[2])
 
 conn.close()
